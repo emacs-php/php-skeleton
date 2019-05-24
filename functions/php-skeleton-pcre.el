@@ -1,25 +1,31 @@
+;;; php-skeleton-pcre.el --- Skeleton template for PHP PCRE functions
+
+;; Copyright (C) 2019  Friends of Emacs-PHP development
 ;; Copyright (C) 2015  David Arroyo Menéndez
 
 ;; Author: David Arroyo Menéndez <davidam@gnu.org>
-;; Maintainer: David Arroyo Menéndez <davidam@gnu.org>
+;; Maintainer: USAMI Kenta <tadsan@zonu.me>
 
-;; This file is free software; you can redistribute it and/or modify
+;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
-;; This file is distributed in the hope that it will be useful,
+;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
-;; Boston, MA 02110-1301 USA,
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; PCRE functions
+;; https://www.php.net/manual/en/book.pcre.php
 ;; file:///usr/share/doc/php-doc/html/ref.pcre.html
 
+;;; Code:
 (define-skeleton php-preg_filter
   "Insert a preg_filter statement. preg_filter is identical to preg_replace except it only returns the (possibly transformed) subjects where there was a match."
   ""
@@ -50,7 +56,7 @@
   '(setq flags (skeleton-read "Flags (PREG_PATTERN_ORDER | PREG_SET_ORDER | PREG_OFFSET_CAPTURE)"))
   '(setq offset (skeleton-read "Offset: "))
   > "preg_match_all(" pattern ", " subject ", " matches ", " flags ", " offset ");" \n
-)
+  )
 
 (define-skeleton php-preg_match
   "Insert a preg_match statement. Perform a regular expression match"
@@ -59,16 +65,14 @@
   '(setq matches (skeleton-read "The array of all matches: "))
   '(setq flags (skeleton-read "Flags (PREG_PATTERN_ORDER | PREG_SET_ORDER | PREG_OFFSET_CAPTURE)"))
   '(setq offset (skeleton-read "Offset: "))
-  > "preg_match(" pattern ", " subject ", " matches ", " flags ", " offset ");" \n
-)
+  > "preg_match(" pattern ", " subject ", " matches ", " flags ", " offset ");" \n)
 
 (define-skeleton php-preg_quote
   "Insert a preg_quote statement. Quote regular expression characters"
   ""
   '(setq str (skeleton-read "String: "))
   '(setq delimiter (skeleton-read "Delimiter: "))
-  > "preg_quote(" str ", " delimiter ");" \n
-)
+  > "preg_quote(" str ", " delimiter ");" \n)
 
 (define-skeleton php-preg_replace_callback
   "Insert a preg_replace_callback statement."
@@ -78,8 +82,7 @@
   '(setq subject (skeleton-read "Subject: "))
   '(setq limit (skeleton-read "Limit: "))
   '(setq count (skeleton-read "Count: "))
-  > "preg_replace_callback(" pattern ", " callback ", " subject ", " limit ", " count ");" \n
-)
+  > "preg_replace_callback(" pattern ", " callback ", " subject ", " limit ", " count ");" \n)
 
 (define-skeleton php-preg_replace
   "Insert a preg_replace statement. Perform a regular expression search and replace"
@@ -89,8 +92,7 @@
   '(setq subject (skeleton-read "Subject: "))
   '(setq limit (skeleton-read "Limit: "))
   '(setq count (skeleton-read "Count: "))
-  > "preg_replace_callback(" pattern ", " replacement ", " subject ", " limit ", " count ");" \n
-)
+  > "preg_replace_callback(" pattern ", " replacement ", " subject ", " limit ", " count ");" \n)
 
 (define-skeleton php-preg_split
   "Insert a preg_split statement. Split string by a regular expression"
@@ -99,5 +101,7 @@
   '(setq subject (skeleton-read "Subject: "))
   '(setq limit (skeleton-read "Limit: "))
   '(setq flags (skeleton-read "Flags: "))
-  > "preg_split(" pattern ", " subject ", " limit ", " flags ");" \n
-)
+  > "preg_split(" pattern ", " subject ", " limit ", " flags ");" \n)
+
+(provide 'php-skeleton-pcre)
+;;; php-skeleton-pcre.el ends here

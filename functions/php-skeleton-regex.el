@@ -1,27 +1,31 @@
+;;; php-skeleton-regex.el --- Skeleton template for PHP Regular expression functions
+
+;; Copyright (C) 2019  Friends of Emacs-PHP development
 ;; Copyright (C) 2015  David Arroyo Menéndez
 
 ;; Author: David Arroyo Menéndez <davidam@gnu.org>
-;; Maintainer: David Arroyo Menéndez <davidam@gnu.org>
+;; Maintainer: USAMI Kenta <tadsan@zonu.me>
 
-;; This file is free software; you can redistribute it and/or modify
+;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
-;; This file is distributed in the hope that it will be useful,
+;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
-;; Boston, MA 02110-1301 USA,
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
 
 ;; Regular expression
 ;; http://php.net/manual/en/ref.regex.php
 ;; file:///usr/share/doc/php-doc/html/ref.regex.html
 
+;;; Code:
 (define-skeleton php-ereg
   "Insert an ereg statement"
   ""
@@ -80,3 +84,6 @@
   '(setq string (skeleton-read "String: "))
   > "sql_regcase(" string ");" \n
 )
+
+(provide 'php-skeleton-regex)
+;;; php-skeleton-regex.el ends here
