@@ -82,8 +82,7 @@
     > "case " str ":" \n
     > _ \n
     > -2 "break;" \n
-    )
-  )
+    ))
 
 (define-skeleton php-include
   "Insert a include statement."
@@ -122,6 +121,25 @@
   > _ \n
   > index ":" \n
   > _ \n)
+
+(define-skeleton php-function
+  "Insert a function statement."
+  ""
+  '(setq function (skeleton-read "Function name? ")) \n
+  '(setq argument (skeleton-read "Argument? ")) \n
+  > "function " function "(" argument
+  ( "Another argument? %s: "
+    > ", " str )
+  > ") {" \n
+  _ \n
+  > "}")
+
+(define-skeleton php-define
+  "Insert a define statement"
+  ""
+  '(setq variable (skeleton-read "Variable? "))
+  '(setq value (skeleton-read "Value? "))
+  "define(\"" variable "\",\"" value "\");")
 
 (provide 'php-skeleton)
 ;;; php-skeleton.el ends here
