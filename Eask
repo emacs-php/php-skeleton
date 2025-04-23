@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "php-skeleton"
          "0.0.1"
          "Skeleton template for PHP language strucures")
